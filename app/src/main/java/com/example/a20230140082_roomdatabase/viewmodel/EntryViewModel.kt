@@ -1,8 +1,10 @@
 package com.example.a20230140082_roomdatabase.viewmodel
 
+import android.app.PictureInPictureUiState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.a20230140082_roomdatabase.repositori.RepositoriSiswa
+import com.example.a20230140082_roomdatabase.room.Siswa
 
 class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
@@ -43,5 +45,10 @@ fun DetailSiswa.toSiswa(): Siswa = Siswa(
     nama = nama,
     alamat = alamat,
     telpon = telpon
+)
+
+fun Siswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSsiswa = uiStateSiswa(
+    detailSiswa = this.toDetailSiswa(),
+    isEntryValid = isEntryValid
 )
 
