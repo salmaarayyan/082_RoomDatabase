@@ -76,6 +76,7 @@ fun HomeScreen(
         BodyHome(
             itemSiswa = uiStateSiswa.listSiswa,
             onSiswaClick = navigateToItemUpdate,
+
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
